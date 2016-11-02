@@ -1,0 +1,52 @@
+.previousPost{
+	float: left;
+	height: 60px;
+	padding: 0px 70px 0px 15px;
+	line-height: 60px;
+	color: white;
+	top:30%;
+	width:auto;
+	left:0px;
+	z-index: 9999;
+	position: fixed;
+	margin-left:-300px;
+}
+.animated.previousPost{
+	margin-left: 0px;	
+}
+.animated.nextPost{
+	margin-right: 0px;	
+}
+.nextPost{
+	float: right;
+	height: 60px;
+	z-index: 9999;
+	width:auto;
+	padding: 0px 15px 0px 70px;
+	line-height: 60px;
+	color: white;	
+	top:30%;
+	right:0px;
+	position: fixed;
+	margin-right:-300px;
+}
+.post-nav-links img{
+	width: 40px;
+	height: 40px;
+}
+.previousPost img{
+	position: absolute;
+	right:10px;
+	top:10px;
+}
+.nextPost img{
+	position: absolute;
+	left:10px;
+	top:10px;
+}
+.featureContent a{
+	color:#333;	
+}
+.featureContent a:hover{
+	text-decoration: none;
+}
