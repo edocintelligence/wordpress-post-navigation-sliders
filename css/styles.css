@@ -1,4 +1,25 @@
+.edoc_wppns_wrapper {
+    width: 100%;    
+}
+#wppns_main_body{
+    width: 100%;
+    float: left;
+    display:inline-block;
+    }
+#wppns_sidebar{
+    width: 25%;
+    float:left;
+    display:inline-block;
+    }
+#wppns_response_group{
+    display:inline-block;
+    width:100%;
+    }
+.each_panel{
+    background-color:#efefef;        
+    }
 .each_panel,.add_panel{
+	border-radius:5px;
 	width: 210px;
 	float: left;
 	border: 1px solid gray;
@@ -19,16 +40,18 @@
 }
 .create_panel{
 	padding: 10px;
-	border: 1px solid gray;	
-	overflow: hidden;	
+	border: 1px solid gray;
+	border-radius:5px;
+	background-color:#fefefe;
+	overflow: hidden;
 	margin-right:10px;
 }
 .content_table{
-	width: 100%;
+	width: 75%;
 	float:left;
 	padding:20px 0px;
 }
-.dp_002_wrapper input{
+.edoc-wppns-wrapper input{
 	line-height: 1.5em;
 }
 .table_show table{
@@ -43,8 +66,16 @@
 }
 #ajaxloading,.ajaxloading{
 	position:relative;
-	top:7px;
+	top:3px;
+	left:-30px;
 	display:none;
+}
+#create_table_layout{
+	-webkit-transition: padding .5s; /* Safari */
+    transition: padding .5s;
+}
+.posting{
+	padding-right:45px !important;
 }
 #add_new{
 	display:none;
@@ -53,14 +84,23 @@
 	display:none;
 }
 .right_session{
-	width:700px;
-	float:right;
+	width: 330px;
+    border-left: 1px solid darkgrey;
+    float: right;
+    background-color: #eee;
+    height: 51px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-top: -28px;
+    margin-right: -10px;
+    border-bottom: 1px solid darkgrey;
+    border-top: 0px solid #eee;
 }
 .right_session .haf_div{
 	width:45%;
 	margin-right:5%;
 	float: left;
-
 }
 .right_session .haf_div label{
 	width:100%;
@@ -69,21 +109,20 @@
 .content_table input[type=text]{
 	display: block;
 	width: 100%;
-	height: 34px;
-	padding: 6px 12px;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #555;
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	border-radius: 5px;
 }
+
+input#value_two{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    height:28px;
+    }
 
 .just_new{
 	position: absolute;
@@ -100,7 +139,7 @@
 	text-decoration: none;
 	text-align: center;
 }
-.dp_002_wrapper h1{
+.edoc--wrapper h1{
 	font-size: 23px;
 	font-weight: 400;
 	padding: 9px 15px 4px 0;
@@ -116,47 +155,46 @@
 .top_panel{
 	width: 230px;
 }
-.inactive{
-	top:-2000px !important;
-    -ms-transition: top 1s;
-    -webkit-transition: top 1s;
-    transition: top 1s; 
+.left_session input[type=text]{
+	width:400px;
 }
-.panel{
-	position: absolute;
-	top: 0px;
-	background-color: #f1f1f1;
-	left:0px;
-	width: 100%;
-	height:100%;
-}
-.wraper-panel{
+.left_session{
 	float:left;
-	width: 100%;
+	padding:20px 0px;
+	margin: 20px 0px;
+	width:100%;
 }
-.left-panel{
-	width:450px;
-	float: left;
+.edoc-tables_page_edit-tables #message,.toplevel_page_dp-table-admin  #message{
+    margin: 30px 0px 0px 0px !important;
+    width: 645px !important;	
+    display: inline-block;
 }
-.main-panel{
-	width: 100%;
-	display: block;
-	box-sizing:border-box;
-	padding: 20px 0px;
+#create_table_layout{
+    float:right;
+    background-color:#90AB76;
+    background:#90AB76;
+    border:#90AB76;
+    box-shadow:0 1px 0 #90AB76;
+    text-shadow:none;
+    color: white;
+	text-rendering:auto;
 }
-.right-panel{
-	width:400px;
-	min-height: 300px;
-	float:right;
-	margin-right:10px;
+.wppnsEditTables tr{
+    background-color:#fafafa;
+    }
+.wppnsEditTables tbody tr:nth-child(odd){
+    background-color:#dfdfdf;
+    }
+.wppnsEditTables tbody tr:nth-child(even){
+    background-color:#fafafa;
+    }
+.sidebarTitle {
+    text-align: center;
 }
-.more-plugin-content{
-	width:400px;
-	box-sizing:border-box;
-	height: 300px;
-	float:right;
-	padding:20px;
-	border: 2px solid red;
-	text-align: center;
-	font-size: 16px;	
+.sidebarWrapper {
+    border: 1px solid grey;
+    border-radius:5px;
+    margin:2px;
+    padding:5px;
+    background-color: #fefefe;
 }

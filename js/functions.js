@@ -1,15 +1,5 @@
-
 jQuery(document).ready(function($){
 	$('.edoc-post-nav-color-field').wpColorPicker();
-	$('#unlocknow05').click(function(){
-		var data = {
-			action	: 'unlock05',
-			key	: $('#keyunlock05').val()
-		};
-		$.post(ajaxurl, data, function(response) {			
-			window.location.reload();
-		});
-	});
 });
 Element.prototype.edocpostnav = function() {
     this.parentElement.removeChild(this);
