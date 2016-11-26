@@ -198,3 +198,6 @@ input#value_two{
     padding:5px;
     background-color: #fefefe;
 }
+.edoc-post-nav-text-field{
+    width:50px!Important;
+    }

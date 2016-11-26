@@ -31,6 +31,7 @@ add_action('admin_menu', 'edoc_wppns_create_menu');
 function edoc_wppns_manager_scripts() {   
 	wp_enqueue_style( 'edoc-wppns-style', plugins_url('css/styles.css', __FILE__) );
 	wp_enqueue_style( 'wp-color-picker' );
+	wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( '/js/wp-color-picker-alpha.min.js',  __FILE__ ), array( 'wp-color-picker' ), '1.0.0', true );
 	wp_enqueue_script( 'edoc-wppns-function', plugins_url('js/functions.js', __FILE__), array( 'wp-color-picker' ), false, true );
 	
 }
@@ -53,7 +54,21 @@ echo '<div class="wrap post-nav-wrapper'.$post_nav_class.'">';
     <table class="form-table">
         <tr valign="top">
         <th scope="row">Slider Background Color</th>
-        <td><input type="text" name="navigation_color" class='edoc-post-nav-color-field' data-default-color="#effeff" value="<?php echo get_option('navigation_color'); ?>" /></td>
+        <td>
+        	<input type="text" name="navigation_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_color'); ?>" />
+        </td>
+        </tr>
+
+        <tr valign="top">
+        <th scope="row">Slider Border Color</th>
+        <td>
+			<input type="text" name="navigation_border_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_border_color'); ?>" /></td>
+        </tr>
+
+        <tr valign="top">
+        <th scope="row">Slider Border Radius</th>
+        <td>
+			<input type="text" name="navigation_border_radius" class='edoc-post-nav-text-field' value="<?php echo get_option('navigation_border_radius'); ?>" /></td>
         </tr>
          
         <tr valign="top">
@@ -116,6 +131,8 @@ echo '<div class="wrap post-nav-wrapper'.$post_nav_class.'">';
 }
 function edoc_post_navigation_mysettings(){
 	register_setting( 'edoc-post-navigation-group', 'navigation_color' );
+	register_setting( 'edoc-post-navigation-group', 'navigation_border_color' );
+	register_setting( 'edoc-post-navigation-group', 'navigation_border_radius' );
 	register_setting( 'edoc-post-navigation-group', 'navigation_categories' );
 }
 
@@ -147,6 +164,8 @@ function edoc_post_nav() {
 	<style type="text/css">
 		.previousPost,.nextPost {
 			background-color: <?php echo get_option('navigation_color'); ?>;
+			border: 1px solid <?php echo get_option('navigation_border_color'); ?>;
+			border-radius: <?php echo get_option('navigation_border_radius'); ?>px;
 		}
 	</style>
 		<div class="post-nav-links" id="post-nav-links">
