@@ -3,10 +3,10 @@ Contributors: jerodmoore
 Donate link:https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=care%40edocintelligence%2ecom&item_name=eDoc%20Post%20Navigation%20Sliders&item_number=Support%20Open%20Source&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=US&bn=PP%2dDonationsBF&charset=UTF%2d8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: Post Navigation Slider, Pagination, Previous Next, Flyout, navigation, pages, pagination, paging, custom post next previous post link, custom post pagination, floating next post link, floating next previous post links, floating previous post link, links, next post, next post link, post pagination, previous post, previous post link
+Tags: Post Navigation Slider, Pagination, Previous Next, Next post navigation
 Requires at least: 4.2
 Tested up to: 4.7
-Stable tag: 1.10
+Stable tag: 1.11
 
 EADd Advanced Post Navigation Flyouts for next and previous posts with hover, featured image thumbnail support, and background color selection.
 
@@ -22,7 +22,7 @@ Select the categories you want to have the post navigation sliders working in, s
 > Bug reports for eDoc Post Navigation Sliders are [welcome on GitHub](https://github.com/edocintelligence/wordpress-post-navigation-sliders/issues). Please no feature requests on GitHub. Please no support requests on GitHub.
 
 = Tags =
- Post Navigation Slider, Pagination, Previous Next, Flyout, navigation, pages, pagination, paging, custom post next previous post link, custom post pagination, floating next post link, floating next previous post links, floating previous post link, links, next post, next post link, post pagination, previous post, previous post link
+ Post Navigation Slider, Pagination, Previous Next, Next post navigation
 
 == Installation ==
 

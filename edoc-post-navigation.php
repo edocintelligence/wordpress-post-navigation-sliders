@@ -4,7 +4,7 @@ Plugin Name: eDoc Post Navigation Sliders
 Plugin URI: https://edocintelligence.com/
 Description: Engage users with Post Navigation Fly-ins for Next and Previous posts in specific categories. Select the categories for the plugin to use, and Next and Previous side slide-in animations will draw readers deeper.
 Author: eDoc Intelligence LLC
-Version: 1.10
+Version: 1.11
 Text Domain: edoc-post-navigation-sliders
 Author URI: https://profiles.wordpress.org/jerodmoore/
 License: GNU General Public License v3 or later
