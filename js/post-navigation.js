@@ -30,4 +30,28 @@ function handleMouseMove(event) {
 		jQuery(".nextPost").removeClass('animated fadeInRight');
 	}
 }
+	if(position_auto != 'false'){
+
+
+		var scrollTimer = null;
+		jQuery(window).scroll(function () {
+		    if (scrollTimer) {
+		        clearTimeout(scrollTimer);   // clear any previous pending timer
+		    }
+		    scrollTimer = setTimeout(handleScroll, 200);   // set new timer
+		});
+
+		function handleScroll() {
+			
+			var scroll = jQuery(window).scrollTop();
+			var height = jQuery(document).height();
+			console.log(scroll/height);
+			if(scroll/height >= parseInt(position_auto)/100){
+				jQuery(".nextPost").addClass('animatedv2 fadeInRightv2');
+			}else{
+				jQuery(".nextPost").removeClass('animatedv2 fadeInRightv2');
+			}
+		}
+
+	}
 })();

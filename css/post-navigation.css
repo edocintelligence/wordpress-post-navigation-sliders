@@ -11,10 +11,10 @@
 	position: fixed;
 	margin-left:-300px;
 }
-.animated.previousPost{
+.animated.previousPost,.animatedv2.previousPost{
 	margin-left: 0px;	
 }
-.animated.nextPost{
+.animated.nextPost,.animatedv2.nextPost{
 	margin-right: 0px;	
 }
 .nextPost{

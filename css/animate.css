@@ -6,19 +6,18 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2014 Daniel Eden
 */
 
-.animated {
+.animated,.animatedv2 {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
-
-.animated.infinite {
+.animated.infinite ,.animatedv2.infinite {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
 
-.animated.hinge {
+.animated.hinge,.animatedv2.hinge  {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
 }
@@ -1158,11 +1157,14 @@ Copyright (c) 2014 Daniel Eden
   }
 }
 
+.fadeInLeftv2 {
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+}
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
           animation-name: fadeInLeft;
 }
-
 @-webkit-keyframes fadeInLeftBig {
   0% {
     opacity: 0;
@@ -1228,7 +1230,10 @@ Copyright (c) 2014 Daniel Eden
   -webkit-animation-name: fadeInRight;
           animation-name: fadeInRight;
 }
-
+.fadeInRightv2 {
+  -webkit-animation-name: fadeInRight;
+          animation-name: fadeInRight;
+}
 @-webkit-keyframes fadeInRightBig {
   0% {
     opacity: 0;

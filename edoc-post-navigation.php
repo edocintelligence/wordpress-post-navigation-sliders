@@ -4,7 +4,7 @@ Plugin Name: eDoc Post Navigation Sliders
 Plugin URI: https://edocintelligence.com/
 Description: Engage users with Post Navigation Fly-ins for Next and Previous posts in specific categories. Select the categories for the plugin to use, and Next and Previous side slide-in animations will draw readers deeper.
 Author: eDoc Intelligence LLC
-Version: 1.11
+Version: 1.2
 Text Domain: edoc-post-navigation-sliders
 Author URI: https://profiles.wordpress.org/jerodmoore/
 License: GNU General Public License v3 or later
@@ -53,56 +53,87 @@ echo '<div class="wrap post-nav-wrapper'.$post_nav_class.'">';
      ?>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Slider Background Color</th>
-        <td>
-        	<input type="text" name="navigation_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_color'); ?>" />
-        </td>
+        	<td width="50%">
+	        	<label>
+			        <span class="label_title" scope="row">Slider Background Color</span>
+			        
+			        <input type="text" name="navigation_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_color'); ?>" />
+			    </label>
+			    <label>
+		        	<span class="label_title"  scope="row">Slider Border Color</span>
+					<input type="text" name="navigation_border_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_border_color'); ?>" />
+				</label>
+			</td>
+			<td>
+					<div class="preview"><span class="meta-nav">&lt; </span><a href="">The post title</a></div>
+			</td>
         </tr>
 
         <tr valign="top">
-        <th scope="row">Slider Border Color</th>
-        <td>
-			<input type="text" name="navigation_border_color" class='edoc-post-nav-color-field' data-alpha="true" data-default-color="rgba(0,0,0,0.85)" value="<?php echo get_option('navigation_border_color'); ?>" /></td>
-        </tr>
+        	<td colspan="2">
+        		<label>
+			        <span class="label_title"  scope="row">Slider Border Radius</span>
+			        <input type="text" name="navigation_border_radius" class='edoc-post-nav-text-field' value="<?php echo get_option('navigation_border_radius'); ?>" />
+			    </label>
+	    	</td>
 
-        <tr valign="top">
-        <th scope="row">Slider Border Radius</th>
-        <td>
-			<input type="text" name="navigation_border_radius" class='edoc-post-nav-text-field' value="<?php echo get_option('navigation_border_radius'); ?>" /></td>
         </tr>
          
         <tr valign="top">
-        <th scope="row">Select Category(s)</th>
+        	<td colspan="2">
+        		<label>
+	        		<span class="label_title"  scope="row">Select Category(s)</span>
 
-        <td>
-			<select name="navigation_categories[]" multiple> 
-			 <option value=""><?php echo esc_attr(__('Select category')); ?></option> 
-			 <?php 
-			  $categories = get_categories('hide_empty=0'); 
-			  $select = '';
+		        
+					<select name="navigation_categories[]" multiple> 
+					 <option value=""><?php echo esc_attr(__('Select category')); ?></option> 
+					 <?php 
+					  $categories = get_categories('hide_empty=0'); 
+					  $select = '';
 
-			  foreach ($categories as $category) {
-			  	if(in_array($category->term_id,$list_selected)){
-			  		$select = "selected";
-			  	}else{
-			  		$select = '';
-			  	}
-			  	$option = '<option value="'.$category->term_id.'" '.$select.'>';
-				$option .= $category->cat_name;
-				$option .= ' ('.$category->category_count.')';
-				$option .= '</option>';
-				echo $option;
-			  }
-			 ?>
-			</select>
-
-        </td>
+					  foreach ($categories as $category) {
+					  	if(in_array($category->term_id,$list_selected)){
+					  		$select = "selected";
+					  	}else{
+					  		$select = '';
+					  	}
+					  	$option = '<option value="'.$category->term_id.'" '.$select.'>';
+						$option .= $category->cat_name;
+						$option .= ' ('.$category->category_count.')';
+						$option .= '</option>';
+						echo $option;
+				  }
+				 ?>
+				</select>
+				</label>
+	        </td>
         </tr>
-        
-    </table>
-    
-    <?php submit_button(); ?>
+        <tr valign="top">
 
+        	<td colspan="2">
+        		<label>
+		        	<span class="label_title"  scope="row">Enable AutoShow</span>
+		        	<input type="checkbox" name="auto_show" class='edoc-post-nav-text-field' data-alpha="true" <?php if(get_option('auto_show') == "true"){echo "checked";} ; ?> value="true" />
+		        </laebl>
+	        </td>	
+        </tr>
+        <tr valign="top">
+        	<td colspan="2">
+	        	<label>
+	        		<span class="label_title edoc-post-nav-text-field"  scope="row">AutoShow Percent (%)</span> 
+					<input type="number" name="auto_next" class='edoc-post-nav-text-field' value="<?php echo get_option('auto_next'); ?>" />
+				</label>
+			</td>
+        </tr>
+    </table>
+    <?php submit_button(); ?>
+    <style>
+    	.preview{
+    		background-color: <?php echo get_option('navigation_color');?>;
+    		border:1px solid <?php echo get_option('navigation_border_color');?>;
+    		border-radius: <?php echo get_option('navigation_border_radius'); ?>;
+    	}
+    </style>
 </form>
 </div>
 </div>
@@ -133,6 +164,8 @@ function edoc_post_navigation_mysettings(){
 	register_setting( 'edoc-post-navigation-group', 'navigation_color' );
 	register_setting( 'edoc-post-navigation-group', 'navigation_border_color' );
 	register_setting( 'edoc-post-navigation-group', 'navigation_border_radius' );
+	register_setting( 'edoc-post-navigation-group', 'auto_show' );
+	register_setting( 'edoc-post-navigation-group', 'auto_next' );
 	register_setting( 'edoc-post-navigation-group', 'navigation_categories' );
 }
 
@@ -165,9 +198,12 @@ function edoc_post_nav() {
 		.previousPost,.nextPost {
 			background-color: <?php echo get_option('navigation_color'); ?>;
 			border: 1px solid <?php echo get_option('navigation_border_color'); ?>;
-			border-radius: <?php echo get_option('navigation_border_radius'); ?>px;
+			border-radius: <?php echo get_option('navigation_border_radius'); ?>;
 		}
 	</style>
+	<script>
+		var position_auto = <?php $data=  get_option('auto_show') == 'true' && get_option('auto_next') != '' ? get_option('auto_next') :  'false' ; echo $data; ?>;
+	</script>
 		<div class="post-nav-links" id="post-nav-links">
 			<?php
 				previous_post_link( '%link', __( '<strong  class="previousPost"><span class="meta-nav">< </span>%title'.$previousThumb.'</strong>'));

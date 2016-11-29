@@ -198,6 +198,28 @@ input#value_two{
     padding:5px;
     background-color: #fefefe;
 }
-.edoc-post-nav-text-field{
+.create_panel .form-table label{
+	width: 100%;
+	float:left;
+	padding-bottom:20px;
+}
+.create_panel .form-table label span.label_title{
+    width: 200px;
+    float: left;
+    font-weight: bold;
+    line-height: 1em;
+}
+.edoc-post-nav-text-field[type="number"],.edoc-post-nav-text-field[type="text"]{
     width:50px!Important;
-    }
+}
+.preview{
+	float: left;
+	height: 60px;
+    padding: 0px 70px 0px 15px;
+    line-height: 60px;
+    color:white;
+    width: auto;
+}
+.preview a{
+	color:white;
+}
